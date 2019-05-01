@@ -28,16 +28,18 @@ class Buttons extends React.Component {
 
 class Display extends React.Component {
   render() {
-    <div>Calculated Value</div>;
+    return <div>Calculated Value</div>;
   }
 }
 
 class Calculator extends React.Component {
-  return() {
-    <div>
-      <Display />
-      <Buttons />
-    </div>;
+  render() {
+    return (
+      <div>
+        <Display />
+        <Buttons />
+      </div>
+    );
   }
 }
 
