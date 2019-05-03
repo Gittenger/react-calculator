@@ -2,15 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-//function component
-const Button = props => {
-  return (
-    <button className="button" onClick={props.onClick}>
-      Val
-    </button>
-  );
-};
-
 class Buttons extends React.Component {
   render() {
     return (
@@ -52,8 +43,14 @@ class Buttons extends React.Component {
 }
 
 class Display extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayNum: 0
+    };
+  }
   render() {
-    return <div>Calculated Value [init 0]</div>;
+    return <div>{this.state.displayNum}</div>;
   }
 }
 
