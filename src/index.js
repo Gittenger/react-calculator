@@ -3,21 +3,56 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 class Buttons extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.getKeyType = getKeyType.bind(this);
+  }
+
+  getKeyType(key) {
+    console.log(key);
+    // let result = "number";
+    // switch (key.dataset.action) {
+    //   case "add":
+    //   case "subtract":
+    //   case "multiply":
+    //   case "divide":
+    //     result = "operator";
+    //     break;
+    //   case "decimal":
+    //     result = "decimal";
+    //     break;
+    //   case "clear":
+    //     result = "clear";
+    //     break;
+    //   case "calculate":
+    //     result = "calculate";
+    //     break;
+    //   default:
+    //     "number";
+    // }
+
+    // return result;
+  }
+
   render() {
     return (
       <div class="container">
-        <div class="calculator__buttons">
-          <div class="calculator__keys">
-            <button class="key--operator" data-action="add">
+        <div
+          onClick={key => this.getKeyType(key)}
+          className="calculator__buttons"
+        >
+          <div className="calculator__keys">
+            <button className="key--operator" data-action="add">
               +
             </button>
-            <button class="key--operator" data-action="subtract">
+            <button className="key--operator" data-action="subtract">
               -
             </button>
-            <button class="key--operator" data-action="multiply">
+            <button className="key--operator" data-action="multiply">
               x
             </button>
-            <button class="key--operator" data-action="divide">
+            <button className="key--operator" data-action="divide">
               %
             </button>
             <button>7</button>
@@ -32,7 +67,7 @@ class Buttons extends React.Component {
             <button>0</button>
             <button data-action="decimal">.</button>
             <button data-action="clear">AC</button>
-            <button class="key--equal" data-action="calculate">
+            <button className="key--equal" data-action="calculate">
               =
             </button>
           </div>
