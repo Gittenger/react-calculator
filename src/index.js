@@ -43,9 +43,19 @@ class Display extends React.Component {
 }
 
 class Buttons extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    console.log(e.currentTarget);
+  }
+
   render() {
     return (
-      <div className="calculator__keys">
+      <div onClick={this.handleClick} className="calculator__keys">
         <button className="key--operator" data-action="add">
           +
         </button>
